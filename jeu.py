@@ -7,7 +7,7 @@ fenetre = pygame.display.set_mode((640,480))
 fond = pygame.image.load("background.jpg").convert()
 fenetre.blit(fond,(0,0))
 
-perso = pygame.image.load("husky.jpg").convert_alpha()
+perso = pygame.image.load("tresor.png").convert_alpha()
 position_perso = perso.get_rect()
 fenetre.blit(perso,position_perso)
 
