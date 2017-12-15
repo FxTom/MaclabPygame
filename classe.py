@@ -64,7 +64,7 @@ class Perso:
 
         if direction == 'gauche':
             if self.case_x > 0:
-                if self.niveau.structure[self.case_y][self.case_y-1] != "+":
+                if self.niveau.structure[self.case_y][self.case_x-1] != "+":
                     self.case_x -= 1
                     self.x = self.case_x * longueur_sprite
 
