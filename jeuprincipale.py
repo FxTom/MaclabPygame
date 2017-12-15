@@ -37,9 +37,9 @@ while stopper:                     #boucle infinie
 
     if mcg.case_x == seringue1.x / longueur_sprite and mcg.case_y == seringue1.y / longueur_sprite :
         se1 = 1
-    if mcg.case_x == seringue2.x / longueur_sprite and mcg.case_y == seringue2.y / longueur_sprite :
+    elif mcg.case_x == seringue2.x / longueur_sprite and mcg.case_y == seringue2.y / longueur_sprite :
         se2 = 1
-    if mcg.case_x == seringue3.x / longueur_sprite and mcg.case_y == seringue3.y / longueur_sprite :
+    elif mcg.case_x == seringue3.x / longueur_sprite and mcg.case_y == seringue3.y / longueur_sprite :
         se3 = 1
 
     fenetre.blit(floor,(0,0))
