@@ -17,9 +17,10 @@ lose = pygame.image.load("youlose.png").convert_alpha()
 win = pygame.image.load("youwin.png").convert_alpha()
 mcg = Perso("mac.jpg", niveau)
 floor = pygame.image.load("floor.jpg").convert()
-seringue1 = Tresor("tresor.png", niveau, longueur_sprite*2, longueur_sprite*12)
-seringue2 = Tresor("tresor.png", niveau, longueur_sprite*11, longueur_sprite*12)
-seringue3 = Tresor("tresor.png", niveau, longueur_sprite*5, longueur_sprite*7)
+limited = (len(niveau.structure)-1)*longueur_sprite
+seringue1 = Tresor("tresor.png", niveau, randrange(0,limited,longueur_sprite),randrange(0,limited,longueur_sprite))
+seringue2 = Tresor("tresor.png", niveau, randrange(0,limited,longueur_sprite),randrange(0,limited,longueur_sprite))
+seringue3 = Tresor("tresor.png", niveau, randrange(0,limited,longueur_sprite),randrange(0,limited,longueur_sprite))
 pygame.display.flip()
 compteur_objet = 0
 

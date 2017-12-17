@@ -1,16 +1,15 @@
-xx++++++++++++++
-+xx++++++xxxxxx+
-+xxx+++++xxxxxx+
-+++xx++++++xxxx+
-++++xxxxxxxxxxx+
-+++++++++++++xx+
-+++++++++++++xx+
-+xxxxxxxxxxxxxx+
-+xxx++++++++++++
-+++xxx++xxxxxxx+
-++++xx++x++++xx+
-+ +++    ++++  +
-+     +++      +
-+++++     ++++++
-+++++++++     O+
-++++++++++++++++
+xx+++++++++++++
++xx+++++xxxxxx+
++xxx++++xxxxxx+
++++xx+++++xxxx+
+++++xxxxxxxxxx+
+++++++++++++xx+
+++++++++++++xx+
++xxxxxxxxxxxxx+
++xxx+++++++++++
++++xxx++xxxxxx+
+++++xx++x+++xx+
++x+++xxxx+++xx+
++xxxxx++xxxxxx+
+++++xxxxx++++++
+++++++++xxxxxO+
