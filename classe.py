@@ -1,6 +1,8 @@
 import pygame
 from constante import *
 from pygame.locals import *
+from random import randrange
+from pygame import *
 
 class Niveau:
 
@@ -73,10 +75,27 @@ class Perso:
 
 class Tresor:
 
-    def __init__(self, image, niveau, x, y):
+    def __init__(self, image, niveau):
         self.image = pygame.image.load(image).convert_alpha()
         self.niveau = niveau
-        self.x = x
-        self.y = y
+        self.x = 0
+        self.y = 0
         self.case_x = 0
         self.case_y = 0
+
+    def afficher(self,fenetre):
+            i = 0
+            limited = (len(self.niveau.structure)-1)*longueur_sprite
+            self.x = randrange(0,limited,longueur_sprite)
+            self.y = randrange(0,limited,longueur_sprite)
+            self.case_x = int(self.x / longueur_sprite)
+            self.case_y = int(self.y / longueur_sprite)
+            while i == 0:
+                if self.niveau.structure[self.case_y][self.case_x] != "x":
+                    self.x = randrange(0,limited,longueur_sprite)
+                    self.y = randrange(0,limited,longueur_sprite)
+                    self.case_x = int(self.x / longueur_sprite)
+                    self.case_y = int(self.y / longueur_sprite)
+                elif self.niveau.structure[self.case_y][self.case_x] == "x":
+                        fenetre.blit(self.image,(self.x,self.y))
+                        i += 1
