@@ -10,6 +10,7 @@ from constante import *
 pygame.init()
 
 window = pygame.display.set_mode((lenght_window, lenght_window))
+pygame.display.set_caption("Game FX")
 
 pygame.time.Clock().tick(30)
 #load the labyrinth
