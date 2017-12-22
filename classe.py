@@ -29,7 +29,7 @@ class Labyrinth:
         wall = pygame.image.load("wall.jpg").convert()
         guardian = pygame.image.load("guardian.jpg").convert()
 
-        compteur_ligne = 0
+        count_line = 0
         for ligne in self.structure:
             num_case = 0
             for sprite in ligne:
@@ -40,7 +40,7 @@ class Labyrinth:
                 elif sprite == 'O':
                     window.blit(guardian, (x, y))
                 num_case += 1
-            compteur_ligne += 1
+            count_line += 1
 
 class Perso:
 
