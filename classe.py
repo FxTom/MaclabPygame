@@ -34,7 +34,7 @@ class Labyrinth:
             num_case = 0
             for sprite in ligne:
                 x = num_case * lenght_sprite
-                y = compteur_ligne * lenght_sprite
+                y = count_line * lenght_sprite
                 if sprite == '+':
                     window.blit(wall, (x, y))
                 elif sprite == 'O':
