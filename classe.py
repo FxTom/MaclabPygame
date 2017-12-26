@@ -26,8 +26,8 @@ class Labyrinth:
     def display_lab(self, window):
         """ display the labyrinth with the guardian
             and display the wall"""
-        wall = pygame.image.load("wall.jpg").convert()
-        guardian = pygame.image.load("guardian.jpg").convert()
+        wall = pygame.image.load("picture/wall.jpg").convert()
+        guardian = pygame.image.load("picture/guardian.jpg").convert()
 
         count_line = 0
         for ligne in self.structure:
