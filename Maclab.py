@@ -33,7 +33,7 @@ pygame.display.flip()
 
 count_item = 0
 stop = 1
-#Loop of the game
+#main loop
 while stop:
     for event in pygame.event.get():
         if event.type == QUIT:
