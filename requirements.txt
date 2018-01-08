@@ -1,0 +1,5 @@
+adium-theme-ubuntu==0.3.4
+numpy==1.11.0
+pygame===1.9.1release
+unity-lens-photos==1.0
+virtualenv==15.1.0
