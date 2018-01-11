@@ -15,7 +15,7 @@ pygame.display.set_caption("Game FX")
 
 pygame.time.Clock().tick(30)
 #load the labyrinth
-level = Labyrinth("level1.txt")
+level = Labyrinth(levels)
 level.load_lab()
 level.display_lab(window)
 #load the picture
