@@ -1,84 +1,85 @@
+#! /usr/bin/env python3
 # -*-coding:utf-8 -*
+
+"""
+This my project 3 of the Python web developer courses of Openclassrooms
+Macgyver must escape the labyrinth
+"""
 
 import pygame
 from pygame.locals import *
-from classes import *
-from constant import *
-
+from classes import Labyrinth, Perso, Tresor
+from constant import LENGHT_SPRITE, LENGHT_WINDOW, LEVELS, IT1, IT2, IT3
 
 pygame.init()
 
-window = pygame.display.set_mode((lenght_window, lenght_window))
+WINDOW = pygame.display.set_mode((LENGHT_WINDOW, LENGHT_WINDOW))
 pygame.display.set_caption("Game FX")
 
 pygame.time.Clock().tick(30)
 #load the labyrinth
-level = Labyrinth(levels)
-level.load_lab()
-level.display_lab(window)
+LEVEL = Labyrinth(LEVELS)
+LEVEL.load_lab()
+LEVEL.display_lab(WINDOW)
 #load the picture
-lose = pygame.image.load("picture/youlose.png").convert_alpha()
-win = pygame.image.load("picture/youwin.png").convert_alpha()
-floor = pygame.image.load("picture/floor.jpg").convert()
+LOSE = pygame.image.load("picture/youlose.png").convert_alpha()
+WIN = pygame.image.load("picture/youwin.png").convert_alpha()
+FLOOR = pygame.image.load("picture/floor.jpg").convert()
 #create the character and 3 parts of the seringue
-mcg = Perso("picture/mac.jpg", level)
-first_item = Tresor("picture/tresor.png", level)
-first_item.display_tresor(window)
-second_item = Tresor("picture/tresor.png", level)
-second_item.display_tresor(window)
-third_item = Tresor("picture/tresor.png", level)
-third_item.display_tresor(window)
+MCG = Perso("picture/mac.jpg", LEVEL)
+FIRST_ITEM = Tresor("picture/tresor.png", LEVEL)
+FIRST_ITEM.display_tresor(WINDOW)
+SECOND_ITEM = Tresor("picture/tresor.png", LEVEL)
+SECOND_ITEM.display_tresor(WINDOW)
+THIRD_ITEM = Tresor("picture/tresor.png", LEVEL)
+THIRD_ITEM.display_tresor(WINDOW)
 pygame.display.flip()
 
-count_item = 0
-stop = 1
+STOP = 1
 #main loop
-while stop:
+while STOP:
     for event in pygame.event.get():
         if event.type == QUIT:
             stop = 0
         elif event.type == KEYDOWN:
             if event.key == K_DOWN:
-                mcg.move('down')
+                MCG.move('down')
             elif event.key == K_UP:
-                mcg.move('up')
+                MCG.move('up')
             elif event.key == K_RIGHT:
-                mcg.move('right')
+                MCG.move('right')
             elif event.key == K_LEFT:
-                mcg.move('left')
+                MCG.move('left')
     #for disappear the tresor when you take this
-    if mcg.case_x == first_item.x / lenght_sprite \
-    and mcg.case_y == first_item.y / lenght_sprite:
-        it1 = 1
-    elif mcg.case_x == second_item.x / lenght_sprite \
-    and mcg.case_y == second_item.y / lenght_sprite:
-        it2 = 1
-    elif mcg.case_x == third_item.x / lenght_sprite \
-    and mcg.case_y == third_item.y / lenght_sprite:
-        it3 = 1
+    if MCG.case_x == FIRST_ITEM.x_for_x / LENGHT_SPRITE \
+    and MCG.case_y == FIRST_ITEM.y_for_y / LENGHT_SPRITE:
+        IT1 = 1
+    elif MCG.case_x == SECOND_ITEM.x_for_x / LENGHT_SPRITE \
+    and MCG.case_y == SECOND_ITEM.y_for_y / LENGHT_SPRITE:
+        IT2 = 1
+    elif MCG.case_x == THIRD_ITEM.x_for_x / LENGHT_SPRITE \
+    and MCG.case_y == THIRD_ITEM.y_for_y / LENGHT_SPRITE:
+        IT3 = 1
 
-    window.blit(floor, (0, 0))
-    level.display_lab(window)
-    window.blit(mcg.picture, (mcg.x, mcg.y))
+    WINDOW.blit(FLOOR, (0, 0))
+    LEVEL.display_lab(WINDOW)
+    WINDOW.blit(MCG.picture, (MCG.x_x, MCG.y_y))
 
-    if it1 == 0:
-        window.blit(first_item.picture, (first_item.x, first_item.y))
-        count_item += 1
-    if it2 == 0:
-        window.blit(second_item.picture, (second_item.x, second_item.y))
-        count_item += 1
-    if it3 == 0:
-        window.blit(third_item.picture, (third_item.x, third_item.y))
-        count_item += 1
+    if IT1 == 0:
+        WINDOW.blit(FIRST_ITEM.picture, (FIRST_ITEM.x_for_x, FIRST_ITEM.y_for_y))
+    if IT2 == 0:
+        WINDOW.blit(SECOND_ITEM.picture, (SECOND_ITEM.x_for_x, SECOND_ITEM.y_for_y))
+    if IT3 == 0:
+        WINDOW.blit(THIRD_ITEM.picture, (THIRD_ITEM.x_for_x, THIRD_ITEM.y_for_y))
 
     pygame.display.flip()
 
-    if level.structure[mcg.case_y][mcg.case_x] == 'O':
-        if it1 == 1 and it2 == 1 and it3 == 1:
-            window.blit(win, (0, 0))
+    if LEVEL.structure[MCG.case_y][MCG.case_x] == 'O':
+        if IT1 == 1 and IT2 == 1 and IT3 == 1:
+            WINDOW.blit(WIN, (0, 0))
             pygame.display.flip()
-            stop = 0
+            STOP = 0
         else:
-            window.blit(lose, (0, 0))
+            WINDOW.blit(LOSE, (0, 0))
             pygame.display.flip()
-            stop = 0
+            STOP = 0
