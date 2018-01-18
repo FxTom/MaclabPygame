@@ -1,4 +1,4 @@
-from constante import *
+from constant import *
 from pygame.locals import *
 from random import randrange
 from pygame import *
@@ -91,19 +91,19 @@ class Tresor:
         self.case_y = 0
 
     def display_tresor(self, window):
-            """display the tresor somewhere in the labyrinth"""
-            i = 0
-            limited = (len(self.level.structure)-1)*lenght_sprite
-            self.x = randrange(0, limited, lenght_sprite)
-            self.y = randrange(0, limited, lenght_sprite)
-            self.case_x = int(self.x / lenght_sprite)
-            self.case_y = int(self.y / lenght_sprite)
-            while i == 0:
-                if self.level.structure[self.case_y][self.case_x] != "x":
-                    self.x = randrange(0, limited, lenght_sprite)
-                    self.y = randrange(0, limited, lenght_sprite)
-                    self.case_x = int(self.x / lenght_sprite)
-                    self.case_y = int(self.y / lenght_sprite)
-                elif self.level.structure[self.case_y][self.case_x] == "x":
-                        window.blit(self.picture, (self.x, self.y))
-                        i += 1
+        """display the tresor somewhere in the labyrinth"""
+        i = 0
+        limited = (len(self.level.structure)-1)*lenght_sprite
+        self.x = randrange(0, limited, lenght_sprite)
+        self.y = randrange(0, limited, lenght_sprite)
+        self.case_x = int(self.x / lenght_sprite)
+        self.case_y = int(self.y / lenght_sprite)
+        while i == 0:
+            if self.level.structure[self.case_y][self.case_x] != "x":
+                self.x = randrange(0, limited, lenght_sprite)
+                self.y = randrange(0, limited, lenght_sprite)
+                self.case_x = int(self.x / lenght_sprite)
+                self.case_y = int(self.y / lenght_sprite)
+            elif self.level.structure[self.case_y][self.case_x] == "x":
+                window.blit(self.picture, (self.x, self.y))
+                i += 1

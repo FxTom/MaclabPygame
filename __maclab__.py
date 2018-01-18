@@ -1,11 +1,9 @@
-#!/usr/bin/pyhton3
 # -*-coding:utf-8 -*
 
 import pygame
 from pygame.locals import *
-from classe import *
-from constante import *
-
+from classes import *
+from constant import *
 
 
 pygame.init()
@@ -79,7 +77,8 @@ while stop:
         if it1 == 1 and it2 == 1 and it3 == 1:
             window.blit(win, (0, 0))
             pygame.display.flip()
+            stop = 0
         else:
             window.blit(lose, (0, 0))
             pygame.display.flip()
-        stop = 0
+            stop = 0
