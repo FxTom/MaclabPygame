@@ -24,8 +24,8 @@ class Labyrinth:
             structure_level = []
             for line in lab:
                 line_level = []
-                for sprites in line:
-                    if sprites != "\n":
+                for sprite in line:
+                    if sprite != "\n":
                         line_level.append(sprite)
                 structure_level.append(line_level)
             self.structure = structure_level
