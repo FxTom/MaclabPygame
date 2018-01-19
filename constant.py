@@ -1,4 +1,4 @@
-"""Constants of all my file for play __maclab__"""
+"""Constants of all my file for play __maclab__ ."""
 
 import random
 

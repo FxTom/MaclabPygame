@@ -1,4 +1,4 @@
-"""All classes of my game"""
+"""All classes of my game."""
 
 from random import randrange
 import pygame

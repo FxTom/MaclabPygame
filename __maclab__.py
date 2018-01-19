@@ -2,8 +2,8 @@
 # -*-coding:utf-8 -*
 
 """
-This my project 3 of the Python web developer courses of Openclassrooms
-Macgyver must escape the labyrinth
+This my project 3 of the Python web developer courses of Openclassrooms.
+Macgyver must escape the labyrinth.
 """
 
 import pygame
@@ -40,7 +40,7 @@ STOP = 1
 while STOP:
     for event in pygame.event.get():
         if event.type == QUIT:
-            stop = 0
+            STOP = 0
         elif event.type == KEYDOWN:
             if event.key == K_DOWN:
                 MCG.move('down')
