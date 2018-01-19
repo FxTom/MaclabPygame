@@ -16,7 +16,7 @@ class Labyrinth:
     def __init__(self, lab):
         """Initialized the labyrinth"""
         self.lab = lab
-        self.struture = 0
+        self.structure = 0
 
     def load_lab(self):
         """load the labyrinth in file .txt"""
