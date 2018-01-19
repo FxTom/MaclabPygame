@@ -5,7 +5,7 @@ MacGyver Labytrinth
 Project 3 of Python web developer course of OpenClassrooms
 
 ---------------------------------------------------------------------------------------------------
-Goal of th game
+Goal of the game
 ---------------------------------------------------------------------------------------------------
 
 Help MacGyver to escape from labyrinth. Catch three tresor (a syringe, a needle, some sleeping drug) and go to see The Guardian for put to sleep him. If you don't have all of tresors, you lose.
